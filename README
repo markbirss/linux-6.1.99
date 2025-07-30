@@ -27,5 +27,5 @@ cd /usr/src/linux-6.1.99
 
 make rk3506_luckfox_defconfig
 
-make -j3 modules_prepare; make -j3 modules; make -j3 modules_install; depmod -a; make -j3 INSTALL_HDR_PATH=/usr/src/linux-headers-6.1.99 headers_install; reboot
+make -j3 modules_prepare; make -j3 modules; sudo make -j3 modules_install; sudo depmod -a; sudo make -j3 INSTALL_HDR_PATH=/usr/src/linux-headers-6.1.99 headers_install; reboot
 ```

@@ -16,3 +16,16 @@ several of them using the Restructured Text markup notation.
 Please read the Documentation/process/changes.rst file, as it contains the
 requirements for building and running the kernel, and information about
 the problems which may result by upgrading your kernel.
+
+
+```
+sudo apt -y update; sudo apt install build-essential libncurses-dev bison flex libssl-dev libelf-dev bc rsync dwarves git
+
+git clone https://github.com/markbirss/linux-6.1.99.git
+sudo mv linux-6.1.99 /usr/src/
+cd /usr/src/linux-6.1.99
+
+make rk3506_luckfox_defconfig
+
+make -j3 modules_prepare; make -j3 modules; make -j3 modules_install; depmod -a; make -j3 INSTALL_HDR_PATH=/usr/src/linux-headers-6.1.99 headers_install; reboot
+```

@@ -24,7 +24,7 @@ sudo apt -y update; sudo apt install build-essential libncurses-dev bison flex l
 git clone https://github.com/markbirss/linux-6.1.99.git; \
 sudo mv linux-6.1.99 /usr/src/; \
 cd /usr/src/linux-6.1.99; \
-
+mv .git dot_git; \
 make rk3506_luckfox_defconfig; \
 
 make -j3 zImage; \

@@ -19,9 +19,13 @@ the problems which may result by upgrading your kernel.
 
 
 ```
+[Docker]
 docker run --platform linux/arm/v7 -it --rm ubuntu:22.04 bash
+apt -y update; apt -y install build-essential libncurses-dev bison flex libssl-dev libelf-dev bc rsync dwarves lz4 git;
+adduser lyra
 
-sudo apt -y update; sudo apt install build-essential libncurses-dev bison flex libssl-dev libelf-dev bc rsync dwarves lz4 git; \
+
+
 
 git clone https://github.com/markbirss/linux-6.1.99.git; \
 sudo mv linux-6.1.99 /usr/src/; \
@@ -36,4 +40,7 @@ sudo make -j3 modules_install; \
 sudo depmod -a; \
 sudo make -j3 INSTALL_HDR_PATH=/usr/src/linux-headers-6.1.99 headers_install; \
 sudo reboot
+
+[Local]
+sudo apt -y update; sudo apt install build-essential libncurses-dev bison flex libssl-dev libelf-dev bc rsync dwarves lz4 git;
 ```

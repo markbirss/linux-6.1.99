@@ -48,3 +48,11 @@ sudo reboot
 [Local]
 sudo apt -y update; sudo apt install build-essential libncurses-dev bison flex libssl-dev libelf-dev bc rsync dwarves lz4 git;
 ```
+
+```
+[Build Deb]
+apt -y install cpio build-essential kernel-package libncurses5-dev fakeroot wget bzip2 git dpkg-dev devscripts
+cd /usr/src/linux-6.1.99
+nice make -j$(nproc) bindeb-pkg
+
+```
